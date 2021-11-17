@@ -7,7 +7,6 @@ using UnityEngine.Events;
 public class Level : MonoBehaviour
 {
     [SerializeField] private int pointsPerLevel = 200;
-    [SerializeField] private UnityEvent onLevelUp;
     private int experiencePoints = 0;
 
     public event Action _onLevelUpAction;
