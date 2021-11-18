@@ -5,8 +5,9 @@ namespace Patterns.Strategy
 {
     public class AbilityUser : MonoBehaviour
     {
-        
-        [SerializeField] private IAbility currentAbility = new FireBallAbility();
+
+        [SerializeField] private IAbility currentAbility = new DelayedDecorator(new FireBallAbility());
+           
 
         [Button]
         public void UseAbility()
