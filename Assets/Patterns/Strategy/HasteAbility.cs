@@ -6,7 +6,7 @@ namespace Patterns.Strategy
     {
         public void Use(GameObject currentGameObject)
         {
-            throw new System.NotImplementedException();
+            Debug.Log("Fast as Fu** Boi");
         }
     }
 }
