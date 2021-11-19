@@ -9,24 +9,23 @@ public class Level : MonoBehaviour
     [SerializeField] private int pointsPerLevel = 200;
     private int experiencePoints = 0;
 
-    public event Action _onLevelUpAction;
+    public event Action onLevelUpAction;
+    public event Action onExperienceChange;
 
-    private IEnumerator Start()
+
+    private void Start()
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(0.2f);
-            GainExperience(10);
-        }
+        onExperienceChange?.Invoke();
     }
 
     public void GainExperience(int points)
     {
         int level = GetLevel();
         experiencePoints += points;
+        onExperienceChange?.Invoke();
         if (GetLevel() > level)
         {
-            _onLevelUpAction?.Invoke();
+            onLevelUpAction?.Invoke();
         }
     }
 
