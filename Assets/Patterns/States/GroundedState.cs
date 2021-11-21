@@ -6,6 +6,7 @@ namespace State_Pattern
     {
         public void Jump(ILocomotionContext context)
         {
+            
             context.SetState(new InAirState());
             Debug.Log("Iam inAir");
         }
