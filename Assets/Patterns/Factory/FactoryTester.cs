@@ -5,7 +5,6 @@ namespace Patterns.Factory
 {
     public class FactoryTester : MonoBehaviour
     {
-
         [Button]
         void CastFireBall()
         {
